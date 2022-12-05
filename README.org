@@ -1,0 +1,20 @@
+* ~libgccjit~
+
+This is simply a wrapper around [[https://gcc.gnu.org/onlinedocs/jit/][libgccjit]].
+
+The wrapper is generated using a single added ~ifDef~ in the header
+file under [[c_sources/libgccjit.h]] using ~c2nim~:
+
+#+begin_src sh
+c2nim libgccjit.h
+#+end_src
+on this modified version.
+
+Note: the original header contains multiple ~typedef~ calls, which are
+eaten by ~c2nim~. These correspond to the definitions of the generic
+objects used to represent things in ~libgccjit~. We add them back
+manually into the Nim wrapper as pure ~objects~.
+
+See the [[examples/hello_world.nim]] for a Nim version of the first
+tutorial example, which generates code for a ~greet~ function from
+Nim. 

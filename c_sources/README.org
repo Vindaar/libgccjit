@@ -1,0 +1,5 @@
+* Header source for ~libgccjit~
+
+The header file here used as the basis of the wrapper was simply taken
+from my local installation of ~libgccjit~ on ~ <2022-12-02 Fri> or
+so. The ~ifdef~ at the top is the only change done so far.
